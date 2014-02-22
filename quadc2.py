@@ -48,30 +48,14 @@ def eventualOrbit(pen, c):
 
 def drawOrbits(pen):
     eventualOrbit(pen, .25)
-
-    pen.color("red")
-    count = .25
-    while(count > -.75):
-        eventualOrbit(pen,count)
-        count = count - .1
-
-    pen.color("blue")
-    count = -.75
-    while(count > -1.25):
-        eventualOrbit(pen,count)
-        count = count -.05
-
-    pen.color("green")
-    count = -1.25
-    while(count > -1.4):
-        eventualOrbit(pen,count)
-        count = count - 0.00714
-
     pen.color("red")
     count = -1.4
-    while(count >= -1.76):
+    numIntervals = 50
+    intervalDist = (1.75-1.4)/numIntervals
+    while(count >= -1.75):
         eventualOrbit(pen,count)
-        count = count -0.07
+        count = count - intervalDist
+    eventualOrbit(pen,-1.75)
     
 
 def initialize():
@@ -80,7 +64,7 @@ def initialize():
     pen.hideturtle()
     screen.tracer(1000)
     screen.screensize(800,800)
-    screen.setworldcoordinates(-2,-3,0.5,2)
+    screen.setworldcoordinates(-1.76,-1.8,-1.39,1.3)
     drawAxes(pen)
     markC(pen)
     drawOrbits(pen)
