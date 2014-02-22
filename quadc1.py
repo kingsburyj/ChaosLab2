@@ -77,6 +77,7 @@ def drawOrbits(pen):
 def initialize():
     screen = turtle.Screen()
     pen = turtle.Turtle()
+    
     pen.hideturtle()
     screen.tracer(1000)
     screen.screensize(800,800)
@@ -84,7 +85,7 @@ def initialize():
     drawAxes(pen)
     markC(pen)
     drawOrbits(pen)
-
+    screen.exitonclick()
 def main():
     initialize();
     
